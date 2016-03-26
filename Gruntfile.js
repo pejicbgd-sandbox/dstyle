@@ -2,15 +2,15 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
-      build: {
+    /*uglify: {
+      //options: {
+       // banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %>'
+      //},
+      /*build: {
         src: 'source/js/*.js',
         dest: 'build/js/lib.min.js'
       }
-    },
+    },*/
     sass: {
       dist: {
         files: {
@@ -33,11 +33,11 @@ module.exports = function(grunt) {
         css: {
             files: ['source/sass/*.scss','source/css/*.css'],
             tasks: ['sass', 'cssmin']
-        },
+        }/*,
         js:{
             files: 'source/js/*.js',
             tasks: ['uglify']
-        }
+        }*/
     },
     copy: {
         main: {
@@ -48,11 +48,6 @@ module.exports = function(grunt) {
                     filter: 'isFile'
                 },
                 {
-                    src: ['source/components/angular/angular.min.js'],
-                    dest: 'build/js/angular.min.js',
-                    filter: 'isFile'
-                },
-                {
                     src: ['source/components/font-awesome/fonts/'],
                     dest: 'build/fonts/'
                 },
@@ -60,19 +55,24 @@ module.exports = function(grunt) {
                     src: ['source/components/font-awesome/css/font-awesome.min.css'],
                     dest: 'build/css/font-awesome.min.css',
                     filter: 'isFile'
+                },
+                {
+                    src: ['source/components/bootstrap/dist/css/bootstrap.min.css'],
+                    dest: 'build/css/bootstrap.min.css',
+                    filter: 'isFile'
                 }
             ]
         }
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('default', ['watch', 'sass', 'uglify', 'cssmin']);
-  grunt.registerTask('transfer', ['copy']);
+    grunt.registerTask('default', ['watch', 'sass', 'uglify', 'cssmin']);
+    grunt.registerTask('transfer', ['copy']);
 
 };
