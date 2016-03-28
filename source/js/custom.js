@@ -1,3 +1,6 @@
 (function($) {
-	console.log(1);
+	$('.price-icons').find('i').hover(function() {
+        var $this = $(this);
+        $this.toggleClass("rotate");
+	});
 })(jQuery);

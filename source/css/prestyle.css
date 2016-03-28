@@ -8,7 +8,8 @@ nav {
   background: black;
   width: 100%;
   height: 88px;
-  position: fixed; }
+  position: fixed;
+  top: 0; }
 
 ul {
   margin-top: 20px; }
@@ -26,9 +27,8 @@ ul {
         color: #f9f9f9; }
 
 .langing-image {
-  background: url(../images/langing.jpg) top left no-repeat;
+  background: url(../images/langing.jpg) top center no-repeat;
   background-size: cover;
-  float: left;
   margin-top: 88px;
   height: calc(100vh - 88px);
   width: 100%; }
@@ -36,16 +36,19 @@ ul {
 .title {
   background: black;
   width: 100%;
-  padding: 15px 0;
-  float: left; }
+  margin: 0;
+  padding: 0; }
   .title h3 {
     color: #f9f9f9;
     font-family: "Open Sans", sans-serif;
     letter-spacing: 2px;
-    font-size: 30px; }
+    font-size: 30px;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center; }
 
 .parallax1 {
-  background: url(../images/parallax1.jpg) top left no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/parallax1.jpg);
   width: 100%;
   background-size: cover;
   background-attachment: fixed;
@@ -65,4 +68,33 @@ ul {
       font-size: 18px;
       margin-top: 30px; }
 
-/*# sourceMappingURL=style.css.map */
+.price-wrapper {
+  float: left;
+  margin: 50px 0; }
+
+.price-icons {
+  text-align: center; }
+  .price-icons svg {
+    cursor: pointer; }
+  .price-icons i {
+    position: relative;
+    z-index: 2; }
+
+.haircut {
+  position: relative;
+  top: 32px;
+  left: 69px; }
+
+.rotate {
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  -ms-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
+/*# sourceMappingURL=prestyle.css.map */
