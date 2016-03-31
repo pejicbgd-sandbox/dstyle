@@ -25,9 +25,12 @@ nav {
   height: 88px;
   position: fixed;
   top: 0;
-}
-ul {
-  margin-top: 20px;
+  z-index: 9;
+  .logo {
+    display: inline-block;
+  }
+  ul {
+  margin-top: 32px;
   li {
     display: inline-block;
     a {
@@ -42,6 +45,7 @@ ul {
       }
     }
   }
+}
 }
 .langing-image {
   background: url(../images/langing.jpg) top center no-repeat;
@@ -88,23 +92,35 @@ ul {
   }
 }
 .price-wrapper {
-  float: left;
   margin: 50px 0;
 }
 .price-icons {
-  text-align: center;
+  min-height: 130px;
+  float: none;
+  margin: 0 auto;
   svg {
     cursor: pointer;
   }
   i {
     position: relative;
     z-index: 2;
+    cursor: pointer;
+    -webkit-transition: all 400ms;
+    -moz-transition: all 400ms ;
+    -ms-transition: all 400ms ;
+    -o-transition: all 400ms ;
+    transition: all 400ms ;
   }
 }
 .haircut{
   position: relative;
-  top: 32px;
-  left: 69px;
+  top: 30px;
+  left: 53px;
+}
+.chemistry {
+  position: relative;
+  top: 30px;
+  left: 55px;
 }
 .rotate {
   -webkit-transition: all 400ms;
@@ -117,5 +133,9 @@ ul {
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
   transform: rotate(-90deg);
+}
+.price-content {
+  float: none;
+  margin: 0 auto;
 }
 

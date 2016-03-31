@@ -9,22 +9,24 @@ nav {
   width: 100%;
   height: 88px;
   position: fixed;
-  top: 0; }
-
-ul {
-  margin-top: 20px; }
-  ul li {
+  top: 0;
+  z-index: 9; }
+  nav .logo {
     display: inline-block; }
-    ul li a {
-      color: #f9f9f9;
-      font-family: "Open Sans", sans-serif;
-      font-size: 12px;
-      display: inline-block;
-      margin-left: 30px;
-      font-weight: 600; }
-      ul li a:hover {
-        text-decoration: none;
-        color: #f9f9f9; }
+  nav ul {
+    margin-top: 32px; }
+    nav ul li {
+      display: inline-block; }
+      nav ul li a {
+        color: #f9f9f9;
+        font-family: "Open Sans", sans-serif;
+        font-size: 12px;
+        display: inline-block;
+        margin-left: 30px;
+        font-weight: 600; }
+        nav ul li a:hover {
+          text-decoration: none;
+          color: #f9f9f9; }
 
 .langing-image {
   background: url(../images/langing.jpg) top center no-repeat;
@@ -69,21 +71,33 @@ ul {
       margin-top: 30px; }
 
 .price-wrapper {
-  float: left;
   margin: 50px 0; }
 
 .price-icons {
-  text-align: center; }
+  min-height: 130px;
+  float: none;
+  margin: 0 auto; }
   .price-icons svg {
     cursor: pointer; }
   .price-icons i {
     position: relative;
-    z-index: 2; }
+    z-index: 2;
+    cursor: pointer;
+    -webkit-transition: all 400ms;
+    -moz-transition: all 400ms;
+    -ms-transition: all 400ms;
+    -o-transition: all 400ms;
+    transition: all 400ms; }
 
 .haircut {
   position: relative;
-  top: 32px;
-  left: 69px; }
+  top: 30px;
+  left: 53px; }
+
+.chemistry {
+  position: relative;
+  top: 30px;
+  left: 55px; }
 
 .rotate {
   -webkit-transition: all 400ms;
@@ -96,5 +110,9 @@ ul {
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
   transform: rotate(-90deg); }
+
+.price-content {
+  float: none;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=prestyle.css.map */

@@ -13,10 +13,7 @@
   ],
   "author": "Ivan Pejic",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pejicbgd-sandbox/dstyle/issues"
-  },
-  "homepage": "https://github.com/pejicbgd-sandbox/dstyle#readme",
+  "homepage": "https://github.com/pejicbgd-sandbox/dstyle",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-concat-css": "^0.3.1",
