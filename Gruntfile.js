@@ -54,6 +54,11 @@ module.exports = function(grunt) {
                         src: ['source/components/bootstrap/dist/css/bootstrap.min.css'],
                         dest: 'build/js/jquery.js',
                         filter: 'isFile'
+                    },
+                    {
+                        src: ['source/components/fancybox/source/jquery.fancybox.pack.js'],
+                        dest: 'build/js/jquery.fancybox.pack.js',
+                        filter: 'isFile'
                     }
                 ]
             }

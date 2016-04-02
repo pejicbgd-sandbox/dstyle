@@ -1,0 +1,54 @@
+.parallax {
+  background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(../images/parallax1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  @include fonts;
+  .parallax-title {
+    display: inline-block;
+    background: gray;
+    line-height: 45px;
+    font-size: 35px;
+    margin-top: 5px;
+    padding: 0 10px;
+  }
+  .first {
+    margin-top: 60px;
+  }
+  .parallax-content
+  {
+    padding: 40px 0 100px;
+    p {
+      font-size: 18px;
+      margin-top: 30px;
+    }
+  }
+}
+.second {
+  background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(../images/aveda.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  .parallax-title {
+    background: rgba(255,255,255,.1);
+  }
+  .container > div {
+    margin-bottom: 60px;
+  }
+}
+.third {
+  background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(../images/presa.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  .parallax-title {
+    background: rgba(255,255,255,.1);
+    color: black;
+  }
+  .first {
+    margin-top: 80px;
+  }
+  .container > div {
+    margin-bottom: 60px;
+  }
+}

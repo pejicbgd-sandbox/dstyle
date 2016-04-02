@@ -4,6 +4,51 @@
   font-weight: 400;
   src: local("Open Sans"), local("OpenSans"), url("../fonts/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+.parallax {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/parallax1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  color: #f9f9f9;
+  font-family: "Open Sans", sans-serif; }
+  .parallax .parallax-title {
+    display: inline-block;
+    background: gray;
+    line-height: 45px;
+    font-size: 35px;
+    margin-top: 5px;
+    padding: 0 10px; }
+  .parallax .first {
+    margin-top: 60px; }
+  .parallax .parallax-content {
+    padding: 40px 0 100px; }
+    .parallax .parallax-content p {
+      font-size: 18px;
+      margin-top: 30px; }
+
+.second {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/aveda.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%; }
+  .second .parallax-title {
+    background: rgba(255, 255, 255, 0.1); }
+  .second .container > div {
+    margin-bottom: 60px; }
+
+.third {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/presa.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%; }
+  .third .parallax-title {
+    background: rgba(255, 255, 255, 0.1);
+    color: black; }
+  .third .first {
+    margin-top: 80px; }
+  .third .container > div {
+    margin-bottom: 60px; }
+
 nav {
   background: black;
   width: 100%;
@@ -49,34 +94,21 @@ nav {
     padding: 10px 0;
     text-align: center; }
 
-.parallax1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/parallax1.jpg);
-  width: 100%;
-  background-size: cover;
-  background-attachment: fixed;
-  color: #f9f9f9;
-  font-family: "Open Sans", sans-serif; }
-  .parallax1 .parallax-title {
-    display: inline-block;
-    background: grey;
-    line-height: 45px;
-    font-size: 35px;
-    margin-top: 5px; }
-  .parallax1 .first {
-    margin-top: 60px; }
-  .parallax1 .parallax-content {
-    padding: 40px 0 100px; }
-    .parallax1 .parallax-content p {
-      font-size: 18px;
-      margin-top: 30px; }
-
 .price-wrapper {
   margin: 50px 0; }
+
+.frizer {
+  background: url("../images/frizer.png") top left no-repeat;
+  text-indent: -1410980px;
+  height: 220px; }
 
 .price-icons {
   min-height: 130px;
   float: none;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding-left: 0 !important; }
+  .price-icons span {
+    display: inline-block; }
   .price-icons svg {
     cursor: pointer; }
   .price-icons i {
@@ -113,6 +145,18 @@ nav {
 
 .price-content {
   float: none;
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: center; }
+  .price-content img {
+    padding-left: 10px; }
+
+.thumbs {
+  width: 100%; }
+  .thumbs > div {
+    padding: 1px; }
+  .thumbs img {
+    width: 100%;
+    padding: 0;
+    margin: 0; }
 
 /*# sourceMappingURL=prestyle.css.map */
