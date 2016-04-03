@@ -49,6 +49,9 @@
   .third .container > div {
     margin-bottom: 60px; }
 
+.fancybox-nav:hover span {
+  visibility: visible; }
+
 nav {
   background: black;
   width: 100%;
@@ -158,5 +161,8 @@ nav {
     width: 100%;
     padding: 0;
     margin: 0; }
+
+.hidden-gallery {
+  text-indent: -1410980px; }
 
 /*# sourceMappingURL=prestyle.css.map */
