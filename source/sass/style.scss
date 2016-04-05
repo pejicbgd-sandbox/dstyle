@@ -1,10 +1,6 @@
 $font-color: #f9f9f9;
 $background-color: black;
-
-@mixin fonts {
-  color: $font-color;
-  font-family: "Open Sans", sans-serif;
-}
+$main-font: "Ubuntu", sans-serif;
 
 @font-face {
   font-family: 'Open Sans';
@@ -14,7 +10,9 @@ $background-color: black;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
-@import 'parallax';
+@import "mixins";
+@import "parallax";
+
 .fancybox-nav:hover span {
     visibility: visible;
 }
@@ -34,7 +32,7 @@ nav {
     display: inline-block;
     a {
       @include fonts;
-      font-size: 12px;
+      font-size: 13px;
       display: inline-block;
       margin-left: 30px;
       font-weight: 600;
@@ -130,6 +128,7 @@ nav {
 }
 .thumbs {
   width: 100%;
+  background-color: black;
   & > div {
     padding: 1px;
   }
@@ -141,4 +140,100 @@ nav {
 }
 .hidden-gallery {
   text-indent: -1410980px;
+}
+.owl-theme {
+  cursor: grab !important;
+}
+.form-wrapper {
+    //background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255, 0.7)), url(../images/salon/13.jpg);
+    background: url(../images/salon/13.jpg);
+    background-size: cover;
+    .contact-info {
+        color: #F3F3F3;
+        margin: 80px 0;
+        span {
+            @include fonts;
+            font-size: 19px;
+            line-height: 25px;
+        }
+        .info-wrapper {
+            cursor: pointer;
+            float: none;
+            margin: 0 auto;
+        }
+    }
+    .fa {
+        margin-bottom: 10px;
+        display: inline-block;
+        position: relative;
+    }
+}
+.form {
+    position: relative;
+}
+.contact-form {
+    color: $font-color;
+    padding: 0;
+    width: 100%;
+    input {
+        border: 1px solid $font-color;
+        background: rgba(255,255,255,0.2);
+        height: 35px;
+        margin-top: 20px;
+        padding-left: 55px;
+        float: none !important;
+        width: 100%;
+        &:focus {
+            outline: none !important;
+            border:1px solid gray;
+            box-shadow: 0 0 5px $font-color;
+        }
+    }
+    textarea {
+        @extend input;
+        resize: none;
+        height: auto;
+        padding-left: 25px;
+    }
+    ::-webkit-input-placeholder {
+        @include placeholder;
+    }
+    :-moz-placeholder {
+        @include placeholder;
+    }
+    ::-moz-placeholder{
+        @include placeholder;
+    }
+    :-ms-input-placeholder {
+       @include placeholder;
+    }
+    .input-wrapper {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .fa {
+        position: absolute;
+        border-right: 1px solid #fff;
+        padding-right: 10px;
+        height: 33px;
+        top: 21px;
+        left: 11px;
+        padding-top: 3px;
+    }
+    .fa-user {
+        padding-right: 11px;
+        left: 15px;
+    }
+    button {
+        background-color: transparent;
+        border: 1px solid $font-color;
+        padding: 7px 15px;
+        display: block;
+        margin: 40px auto;
+    }
+}
+.map {
+    width: 100%;
+    height: 400px;
 }

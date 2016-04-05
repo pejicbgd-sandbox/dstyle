@@ -1,0 +1,12 @@
+@mixin fonts {
+  color: $font-color;
+  font-family: $main-font;
+}
+
+@mixin placeholder {
+    color: white;
+    font-family: $main-font;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
