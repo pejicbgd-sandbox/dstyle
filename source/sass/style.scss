@@ -46,13 +46,12 @@ nav {
       display: inline-block;
       margin-left: 30px;
       font-weight: 600;
-      &:hover {
-        text-decoration: none;
-        color: $font-color;
-      }
+      &:focus,
+      &:hover,
+      &:active,
       &:visited {
-        text-decoration: none;
-        color: $font-color;
+        color: white !important;
+        text-decoration: none !important;
       }
     }
   }
@@ -62,6 +61,10 @@ nav {
   height: 60px;
   ul {
     margin-top: 19px;
+  }
+  .logo img {
+    width: 80px;
+    padding-top: 7px;
   }
 }
 .langing-image {
@@ -93,19 +96,19 @@ nav {
   background: url('../images/frizer.png') top left no-repeat;
   text-indent: -1410980px;
   height: 220px;
-  @include transition(all, 400ms);
+  @include transition(all, 600ms);
 }
 .hemija {
-  background-color: blue;
+  background: url('../images/hemija.png') top left no-repeat;
   text-indent: -1410980px;
   height: 220px;
-  @include transition(all, 400ms);
+  @include transition(all, 600ms);
 }
 .maser {
-  background-color: green;
+  background: url('../images/maser.png') top left no-repeat;
   text-indent: -1410980px;
   height: 220px;
-  @include transition(all, 400ms);
+  @include transition(all, 600ms);
 }
 .price-icons {
   min-height: 130px;
@@ -285,7 +288,7 @@ nav {
 footer {
   background-color: white;
   border-top: 2px solid #333;
-  padding: 30px 0;
+  padding: 15px 0;
   width: 100%;
   span {
     font-size: 16px;
