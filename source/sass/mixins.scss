@@ -10,3 +10,8 @@
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+
+@mixin transition($property, $time) {
+	-webkit-transition: $property $time ease-out;
+	transition: $property $time ease-out; 
+}
