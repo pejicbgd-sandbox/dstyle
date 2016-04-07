@@ -66,6 +66,10 @@ nav {
   transition: height 300ms ease-out; }
   nav .logo {
     display: inline-block; }
+    nav .logo img {
+      width: 120px;
+      height: auto;
+      padding-top: 10px; }
   nav ul {
     margin-top: 32px;
     -webkit-transition: margin 300ms ease-out;

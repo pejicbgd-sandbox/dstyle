@@ -29,6 +29,11 @@ nav {
   @include transition(height, 300ms);
   .logo {
     display: inline-block;
+    img {
+      width: 120px;
+      height: auto;
+      padding-top: 10px;
+    }
   }
   ul {
   margin-top: 32px;
