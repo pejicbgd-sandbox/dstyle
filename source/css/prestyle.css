@@ -12,16 +12,14 @@
   color: #f9f9f9;
   font-family: "Ubuntu", sans-serif; }
   .parallax .parallax-title {
-    display: inline-block;
     background: gray;
     line-height: 45px;
-    font-size: 35px;
-    margin-top: 5px;
-    padding: 0 10px; }
-  .parallax .first {
-    margin-top: 60px; }
+    font-size: 35px !important;
+    margin-top: 5px !important;
+    padding: 0 10px;
+    display: inline-block; }
   .parallax .parallax-content {
-    padding: 40px 0 100px; }
+    padding: 100px 0; }
     .parallax .parallax-content p {
       font-size: 18px;
       margin-top: 30px; }
@@ -33,8 +31,6 @@
   width: 100%; }
   .second .parallax-title {
     background: rgba(255, 255, 255, 0.1); }
-  .second .container > div {
-    margin-bottom: 60px; }
 
 .third {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/presa.jpg);
@@ -44,10 +40,6 @@
   .third .parallax-title {
     background: rgba(255, 255, 255, 0.1);
     color: black; }
-  .third .first {
-    margin-top: 80px; }
-  .third .container > div {
-    margin-bottom: 60px; }
 
 .fancybox-nav:hover span {
   visibility: visible; }
@@ -115,6 +107,17 @@ nav {
     margin: 0 auto;
     padding: 10px 0;
     text-align: center; }
+
+.parallax-content p {
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+  -webkit-transition: all 1000ms ease-out;
+  transition: all 1000ms ease-out; }
+.parallax-content .fadeInTop {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0); }
 
 .price-wrapper {
   margin: 50px 0; }
@@ -211,7 +214,9 @@ nav {
   background-size: cover; }
   .form-wrapper .contact-info {
     color: #F3F3F3;
-    margin: 80px 0; }
+    margin-bottom: 80px; }
+    .form-wrapper .contact-info > div {
+      margin-top: 80px; }
     .form-wrapper .contact-info span {
       color: #f9f9f9;
       font-family: "Ubuntu", sans-serif;
@@ -220,7 +225,8 @@ nav {
     .form-wrapper .contact-info .info-wrapper {
       cursor: pointer;
       float: none;
-      margin: 0 auto; }
+      margin: 0 auto;
+      display: inline-block; }
   .form-wrapper .fa {
     margin-bottom: 10px;
     display: inline-block;

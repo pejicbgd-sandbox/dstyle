@@ -1,0 +1,14 @@
+{
+    "caret_style": "phase",
+    "color_scheme": "Packages/Agila Theme/Agila Oceanic Next.tmTheme",
+    "font_face": "Courier New",
+    "font_size": 12,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "save_on_focus_lost": false,
+    "theme": "Agila.sublime-theme",
+    "translate_tabs_to_spaces": true
+}

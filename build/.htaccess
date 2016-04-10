@@ -1,6 +1,0 @@
-AuthType Basic
-AuthName "Dstyle test website"
-AuthUserFile C:/server/htdocs/dstyle/build/.htpasswd
-#AuthUserFile /home/dstyleco/public_html/.htpasswd
-
-Require valid-user

@@ -1,6 +1,45 @@
 (function($) {
 	var $contactInfo = $('.info-wrapper');
 
+	var debounce = function(func, wait, immediate) {
+		var timeout;
+		return function() {
+			var context = this, args = arguments;
+			var later = function() {
+				timeout = null;
+				if (!immediate) func.apply(context, args);
+			};
+			var callNow = immediate && !timeout;
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+			if (callNow) func.apply(context, args);
+		};
+	};
+
+	var fadeInTop = function(handler) {
+		if(handler) {
+			handler.each(function() {
+				var windowTop = $(window).scrollTop();
+				var windowBottom = $(window).height() + windowTop;
+
+				var topOsition = $(this).offset().top + 40;
+				var elHeight = topOsition + $(this).innerHeight() - 40;
+				if((windowBottom >= topOsition) && (windowTop <= elHeight))
+				{
+					$(this).addClass('fadeInTop');
+				}
+				else 
+				{
+					if($(this).hasClass('fadeInTop'))
+					{
+						$(this).removeClass('fadeInTop');
+					}
+				}
+			});
+		}
+		
+	};
+
 	$('nav').find('a').click(function(e) {
 		var target = $(this).attr('href');
 		e.preventDefault();
@@ -65,21 +104,6 @@
 		}, 300);
 	});
 
-var debounce = function(func, wait, immediate) {
-		var timeout;
-		return function() {
-			var context = this, args = arguments;
-			var later = function() {
-				timeout = null;
-				if (!immediate) func.apply(context, args);
-			};
-			var callNow = immediate && !timeout;
-			clearTimeout(timeout);
-			timeout = setTimeout(later, wait);
-			if (callNow) func.apply(context, args);
-		};
-	};
-
 	var updateLayout = debounce(function() {
 		var $nav = $('nav');
 		if($(window).scrollTop() == 0 && $nav.hasClass('shrinked')) {
@@ -89,12 +113,24 @@ var debounce = function(func, wait, immediate) {
 		}
 	}, 500);
 
-	$(window).scroll(updateLayout);
+	$(window).scroll(function() {
+		updateLayout();
+		fadeInTop($('.parallax-content').find('p'));
+		fadeInTop($('.parallax-title')); 
+	});
+
+	$(window).bind('mousewheel', function(e) {
+    if (e.originalEvent.wheelDelta < 0 && $(window).scrollTop() == 0) {
+        $('html, body').stop().animate({
+			scrollTop: $('#usluge').position().top - 7
+		}, 600);
+    }
+});
 
 })(jQuery);
 
-google.maps.event.addDomListener(window, 'load', initializeGoogleMap);
-function initializeGoogleMap()
+google.maps.event.addDomListener(window, 'load', initWindow);
+function initWindow()
 {
     var map,
         bounds = new google.maps.LatLngBounds(),
@@ -242,11 +278,11 @@ function initializeGoogleMap()
 
     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event)
 	    {
-	        this.setZoom(16);
+	    	this.setZoom(16);
 	        google.maps.event.removeListener(boundsListener);
 	    });
 
     map.fitBounds(bounds);
-	map.setOptions({styles: styles});
+    map.setOptions({styles: styles});
 }
 

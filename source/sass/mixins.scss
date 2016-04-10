@@ -1,3 +1,7 @@
+$font-color: #f9f9f9;
+$background-color: black;
+$main-font: "Ubuntu", sans-serif;
+
 @mixin fonts {
   color: $font-color;
   font-family: $main-font;
