@@ -1,0 +1,68 @@
+@media screen and (max-width: 992px) {
+  nav {
+    ul {
+    position: absolute;
+    top: 80px;
+    padding-top: 0px;
+    margin: 0px;
+    width: 100%;
+    display: none;
+    float: none;
+    text-align: right;
+    background: black;
+    li {
+      width: 100%;
+      display: block;
+      padding: 7px 20px;
+    }
+  }
+  .logo img {
+    width: 100px;
+    padding-top: 19px;
+    padding-left: 15px;
+  }
+  .container {
+    padding: 0 !important;
+    width: 100%;
+    & > div {
+      padding: 0;
+    }
+  }
+  }
+  .menu-icon {
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+  }
+  .shrinked {
+    ul {
+      position: absolute;
+      top: 60px;
+      padding-top: 0px;
+      margin: 0px;
+    }
+    .menu-icon {
+      top: 20px;
+    }
+    .logo img {
+      padding-top: 13px;
+    }
+  }
+  footer {
+    span {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+    .icons {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+    }
+    i {
+      margin: 0 10px;
+    }
+  }
+}

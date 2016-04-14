@@ -40,6 +40,12 @@
 		
 	};
 
+	function validateInput(selector) {
+		if(!selector.val()){
+			selector.addClass('error');
+		}
+	}
+
 	$('nav').find('a').click(function(e) {
 		var target = $(this).attr('href');
 		e.preventDefault();
@@ -90,7 +96,22 @@
 		singleItem:true,
 		autoplay:true,
 		autoplayTimeout:3000,
-		autoplayHoverPause:true
+		autoplayHoverPause:true,
+		responsiveClass:true,
+	    responsive:{
+	        0:{
+	            items:1,
+	            nav:true
+	        },
+	        600:{
+	            items:2,
+	            nav:false
+	        },
+	        992:{
+	            items:3,
+	            nav:true
+            }
+	    }
 	});
 
 	$contactInfo.mouseenter(function() {
@@ -111,6 +132,10 @@
 			$nav.removeClass('shrinked');
 		} else {
 			$nav.addClass('shrinked');
+		}
+
+		if($(window).width() > 992) {
+			$('ul').show();
 		}
 	}, 500);
 
@@ -133,6 +158,55 @@
 				scrollTop: $('#map').position().top
 			}, 600);
 	});
+
+	$('button').click(function() {
+		var name = $('input[name="fullname"]'),
+			email = $('input[name="email"]'),
+			message = $('textarea'),
+			flag = false;
+
+		validateInput(name);
+		validateInput(email);
+		validateInput(message);
+
+		flag = (name.hasClass('error') || email.hasClass('error') || message.hasClass('error'));
+		if(!flag) {
+			$.ajax({
+			   url: "mailer.php",
+			   type: "POST",
+			   data: {name: name.val(), email: email.val(), message: message.val(), action: "sendContactForm"},
+			   success: function(response) {
+			   		var response = parseInt(response, 10);
+			   		if(response == 1) {
+			   			name.val('');
+			   			email.val('');
+			   			message.val('');
+			   			$('.msg-holder').html('Hvala Vam na Vašoj poruci!');
+			   		}
+			   }
+			});
+		}
+	});
+
+	$('input[name="fullname"], input[name="email"], textarea').keyup(function() {
+		var $this = $(this);
+		if($this.hasClass('error')) {
+			$this.removeClass('error');
+		}
+	});
+
+	$(".menu-icon").click(function() {
+		$('ul').slideToggle();
+	});
+
+	$('ul').find('a').click(function() {
+		if($(window).width(992))
+		{
+			$(this).closest('ul').slideToggle();
+		}
+	});
+
+	$(window).resize();
 
 })(jQuery);
 
@@ -269,7 +343,7 @@ function initWindow()
 	countrymarker;
 
 	countrymarker = new google.maps.Marker({
-		position: new google.maps.LatLng(44.819909, 20.470312),
+		position: new google.maps.LatLng(44.82000, 20.46952),
 		map: map,
 		title: "Salon Lepote DStyle"
 	});
