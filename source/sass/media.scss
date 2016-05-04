@@ -65,4 +65,18 @@
       margin: 0 10px;
     }
   }
+  .price-icons {
+    margin-top: -140px;
+    svg {
+      height: 46px;
+      width: 46px;
+    }
+  }
+  .haircut,
+  .chemistry,
+  .massage,
+  .download {
+    top: 16px;
+    left: 39px;
+  }
 }

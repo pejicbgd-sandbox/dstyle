@@ -46,6 +46,14 @@
 		}
 	}
 
+	function redrawPriceIcons() {
+		if($(window).width() < 992) {
+			$('.price-icons').find('circle').attr({"cx": 22, "cy": 22, "r": 20})
+		} else {
+			$('.price-icons').find('circle').attr({"cx": 38, "cy": 38, "r": 30})
+		}
+	}
+
 	$('nav').find('a').click(function(e) {
 		var target = $(this).attr('href');
 		e.preventDefault();
@@ -206,7 +214,11 @@
 		}
 	});
 
-	$(window).resize();
+	$(window).resize(function() {
+		redrawPriceIcons();
+	});
+
+	redrawPriceIcons();
 
 })(jQuery);
 

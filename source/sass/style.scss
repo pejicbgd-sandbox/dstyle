@@ -109,18 +109,21 @@ nav {
 }
 .frizer {
   background: url('../images/frizer.png') top left no-repeat;
+  background-size: contain;
   text-indent: -1410980px;
   height: 220px;
   @include transition(all, 600ms);
 }
 .hemija {
   background: url('../images/hemija.png') top left no-repeat;
+  background-size: contain;
   text-indent: -1410980px;
   height: 220px;
   @include transition(all, 600ms);
 }
 .maser {
   background: url('../images/maser.png') top left no-repeat;
+  background-size: contain;
   text-indent: -1410980px;
   height: 220px;
   @include transition(all, 600ms);
@@ -135,6 +138,8 @@ nav {
   }
   svg {
     cursor: pointer;
+    width: 76px;
+    height: 76px;
   }
   i {
     position: relative;
@@ -215,6 +220,7 @@ nav {
     .contact-info {
         color: #F3F3F3;
         margin-bottom: 80px;
+        text-align: center;
         & > div {
           margin-top: 80px;
         }
@@ -375,5 +381,7 @@ footer {
     display: inline-block;
   }
 }
-
+.text-right {
+  text-align: right;
+}
 @import "media";
